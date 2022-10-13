@@ -23,6 +23,12 @@ dag = DAG(
 )
 
 #Define the tasks
+#Task download data.
+download_data = BashOperator(
+	task_id='download_data',
+	bash_command='wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final Assignment/tolldata.tgz',
+	dag=dag,
+)
 
 #define the first task names unzip_data
 unzip_data = BashOperator(
@@ -67,5 +73,5 @@ transform_data=BashOperator(
 )
 
 #Task pipeline
-unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_data_from_fixed_width >> consolidate_data >> transform_data
+download_data >> unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_data_from_fixed_width >> consolidate_data >> transform_data
 
