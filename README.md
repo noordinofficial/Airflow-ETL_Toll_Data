@@ -37,7 +37,7 @@ In this project I will author an Apache Airflow DAG that will:
 
 ### Task 1.3 - Task to download data
 
-Create a task that will download the traffic data from data-source: [https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final Assignment/tolldata.tgz](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz) and stored into the directory `~ Zen/Airflow-ETL_Toll_Data`
+Create a task that will download the traffic data from data-source: (https://github.com/malimsZen/Airflow-ETL_Toll_Data/raw/main/tolldata.tgz) and stored into the directory `~ Zen/Airflow-ETL_Toll_Data`
 
 ### Task 1.4 - Task to unzip data
 
@@ -69,4 +69,4 @@ The final csv file should use the fields in the order given below:
 
 ### Task 1.9 - Define the task pipeline
 
-`unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_data_from_fixed_width >> consolidate_data >> transform_data`
+`download_data >> unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_data_from_fixed_width >> consolidate_data >> transform_data`
